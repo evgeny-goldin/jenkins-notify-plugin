@@ -1,0 +1,19 @@
+<j:jelly xmlns:j="jelly:core"
+         xmlns:st="jelly:stapler"
+         xmlns:d="jelly:define"
+         xmlns:l="/lib/layout"
+         xmlns:t="/lib/hudson"
+         xmlns:f="/lib/form">
+
+  <f:entry title        = "Notify HTTP URL"
+           field        = "notifyUrl"
+           description  = "URL to send POST notifications">
+    <f:textbox/>
+  </f:entry>
+
+  <f:entry title        = "Notify template"
+           field        = "notifyTemplate"
+           description  = "JSON payload to send">
+    <f:textarea default = "${descriptor.defaultNotifyTemplate}"/>
+  </f:entry>
+</j:jelly>

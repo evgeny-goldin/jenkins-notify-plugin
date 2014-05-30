@@ -1,0 +1,25 @@
+<div>
+  JSON template to send as POST request payload.
+  <p/>
+  It is processed as a <a href="http://groovy.codehaus.org/Groovy+Templates">Groovy template </a> with the following variables available in the scope:
+  <p/>
+  <li><code><b>jenkins</b></code> - instance of <a href="http://javadoc.jenkins-ci.org/jenkins/model/Jenkins.html"><code>jenkins.model.Jenkins</code></a></li>
+  <li><code><b>build</b></code> - instance of <a href="http://javadoc.jenkins-ci.org/hudson/model/AbstractBuild.html"><code>hudson.model.AbstractBuild</code></a></li>
+  <li><code><b>env</b></code> - instance of <a href="http://javadoc.jenkins-ci.org/hudson/EnvVars.html"><code>hudson.EnvVars</code></a> corresponding to the current build process</li>
+  <p/>
+  In addition, <code><b>json( Object )</b></code> helper function is available, rendering <code>Object</code> provided as JSON.
+  <p/>
+  For example:
+  <pre>
+{
+  "items":       ${ json( jenkins.allItems ) },
+  "computers":   ${ json( jenkins.computers.collect{ it.displayName }) },
+  "moduleRoots": ${ json( build.moduleRoots )},
+  "artifacts":   ${ json( build.artifacts )},
+  "env":         ${ json( env ) },
+  "properties":  ${ json( [ system: System.properties.keySet(), env: env.keySet() ]) }
+}
+  </pre>
+  Tip: <a href="http://jsonlint.com/"><b>jsonlint.com</b></a> and <a href="http://requestb.in/"><b>requestb.in</b></a>
+  are great tools to validate and inspect your JSON payloads.
+</div>
