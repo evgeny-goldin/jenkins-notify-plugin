@@ -8,7 +8,7 @@ URLs of artifacts generated, Git branch and commit SHA.
  
 But being a configurable Groovy template it can contain any Jenkins, job or build details you may think of!
 
-![Post-build action - configurable JSON payload is submitted as POST request](https://raw.githubusercontent.com/cloudnative/jenkins-notify-plugin/master/screenshots/jenkins-notify-plugin.png "Post-build action - configurable JSON payload is submitted as POST request")
+![Post-build action with JSON payload submitted as POST request](https://raw.githubusercontent.com/cloudnative/jenkins-notify-plugin/master/screenshots/jenkins-notify-plugin.png "Post-build action with JSON payload submitted as POST request")
 
 JSON payload is rendered as a Groovy template, having the following variables in scope:
  
@@ -32,3 +32,8 @@ For example:
       "env":         ${ json( env ) },
       "properties":  ${ json( [ system: System.properties.keySet(), env: env.keySet() ]) }
     }
+
+# Building and installing the plugin
+
+    mvn clean package -s settings.xml
+    cp target/*.hpi ~/.jenkins/plugins
