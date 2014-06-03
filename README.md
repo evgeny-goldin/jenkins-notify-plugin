@@ -33,7 +33,7 @@ For example:
       "properties":  ${ json( [ system: System.properties.keySet(), env: env.keySet() ]) }
     }
 
-# Building and installing the plugin
+### Building and installing the plugin
 
     mvn clean package -s settings.xml
     cp target/*.hpi ~/.jenkins/plugins
