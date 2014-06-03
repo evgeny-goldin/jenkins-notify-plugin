@@ -1,9 +1,12 @@
 jenkins-notify-plugin
 =====================
 
-Jenkins plugin sending POST request as a post-build action with configurable JSON payload. 
+Jenkins plugin sending POST request as a post-build action with configurable JSON payload.
+
 By default payload submitted contains the details of the build (build number, build result, job and log URLs), 
-URLs of artifacts generated, Git branch and commit SHA but it can contain any Jenkins, job or build details.
+URLs of artifacts generated, Git branch and commit SHA.
+ 
+But being a configurable Groovy template it can contain any Jenkins, job or build details you may think of!
 
 ![Post-build action - configurable JSON payload is submitted as POST request](https://raw.githubusercontent.com/cloudnative/jenkins-notify-plugin/master/screenshots/jenkins-notify-plugin.png "Post-build action - configurable JSON payload is submitted as POST request")
 
