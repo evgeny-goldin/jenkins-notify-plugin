@@ -6,11 +6,11 @@ Jenkins plugin sending POST request as a post-build action with configurable JSO
 By default payload submitted contains the details of the build (build number, build result, job and log URLs), 
 URLs of artifacts generated, Git branch and commit SHA.
  
-But being a configurable Groovy template it can contain any Jenkins, job or build details you may think of!
+But being a configurable [Groovy template](http://groovy.codehaus.org/Groovy+Templates) it can contain any Jenkins, job or build details you may think of!
 
 ![Post-build action with JSON payload submitted as POST request](https://raw.githubusercontent.com/cloudnative/jenkins-notify-plugin/master/screenshots/jenkins-notify-plugin.png "Post-build action with JSON payload submitted as POST request")
 
-JSON payload is rendered as a Groovy template, having the following variables in scope:
+JSON payload is rendered as a [Groovy template](http://groovy.codehaus.org/Groovy+Templates), having the following variables in scope:
  
 * **`jenkins`** - instance of [`jenkins.model.Jenkins`](http://javadoc.jenkins-ci.org/jenkins/model/Jenkins.html)
 * **`build`** - instance of [`hudson.model.AbstractBuild`](http://javadoc.jenkins-ci.org/hudson/model/AbstractBuild.html)
@@ -36,4 +36,4 @@ For example:
 ### Building and installing the plugin
 
     mvn clean package -s settings.xml
-    cp target/*.hpi ~/.jenkins/plugins
+    cp -f target/*.hpi ~/.jenkins/plugins
