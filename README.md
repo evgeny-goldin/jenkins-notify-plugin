@@ -1,4 +1,5 @@
 jenkins-notify-plugin
 =====================
 
-Jenkins plugin to send a POST request to any URL when a build is successful, and include details of the build and artifacts generated
+Jenkins plugin sending POST request upon job's completion. JSON payload submitted is configurable and by default contains
+details of the build (build number, build result, job and log URLs), URLs of artifacts generated, Git branch and commit SHA.
